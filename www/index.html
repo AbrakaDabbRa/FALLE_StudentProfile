@@ -1,50 +1,207 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
-            https://cordova.apache.org/docs/en/latest/
-        Some notes:
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+<head>
+    <title>Portfolio Falle</title>
+
+    <style>
+        header {
+            background-color:   hsl(292, 100%, 97%);
+            padding: 25px;
+            text-align: center;
+        }
+        body {
+            background-color: rgb(249, 244, 255);
+        }
+
+        .navbar ul { 
+            list-style-type: none; 
+            background-color: hsl(0, 0%, 25%); 
+            padding: 0px; 
+            margin: 0px; 
+            overflow: hidden; 
+        } 
+
+        .navbar a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 15px;
+            display: block;
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: hsl(0, 0%, 10%);
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        #name {
+            color: black;
+            text-align: center;
+        }
+
+        .prof-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana;
+        }
+
+        p {
+            font-family: Verdana;
+            font-size: 20px;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .skills-list li {
+            padding: 5px;
+        }
+
+        .info-box {
+            border: 2px solid rgb(187, 172, 190);
+            background-color: aliceblue;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: hsl(0, 0%, 0%);
+            font-family: Verdana;
+        }
+
+        .skills-box {
+            border: 2px solid hsl(0, 0%, 3%);
+            background-color: hsl(202, 100%, 98%);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="monke.jpeg" alt="monke img" class="prof-img">
+        <h1 id="name">John Benedict L. Falle</h1>
+        <p>Aspiring Web & Database Developer</p>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <aside id="about">
+        <h2>About Me</h2>
+
+        <p>
+            I am an Information Technology student interested in web development
+            and database management. I enjoy building websites and working with
+            SQL to organize and manage data, and I aim to pursue a career as a
+            Web Developer and Database/SQL Developer.
+        </p>
+
+        <p>
+            I am continuously improving my programming and development skills
+            through academic projects and personal practice. I am especially
+            interested in creating functional and user-friendly websites while
+            learning more about how frontend and backend systems work together.
+        </p>
+
+        <div class="info-box">
+            <h3>Education</h3>
+            <p>
+                <strong>Bachelor of Science in Information Technology</strong><br>
+                Xavier University - Ateneo de Cagayan
+            </p>
+
+            <p>
+                <strong>Science, Technology, Engineering, and Mathematics</strong><br>
+                Xavier University - Ateneo de Cagayan
+            </p>
+
         </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+
+        <div class="info-box">
+            <h3>Interests</h3>
+            <p>
+                I want to delve deeper into frontend design, especially in
+                creating clean, responsive, and user-friendly interfaces.
+            </p>
+        </div>
+    </aside>
+
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="skills-box">
+            <ul class="skills-list">
+                <li>
+                    <strong>HTML</strong>
+                    <p>Web page structure</p>
+                </li>
+
+                <li>
+                    <strong>CSS</strong>
+                    <p>Styling & layouts</p>
+                </li>
+
+                <li>
+                    <strong>JavaScript</strong>
+                    <p>Web interactivity</p>
+                </li>
+
+                <li>
+                    <strong>SQL</strong>
+                    <p>Database management</p>
+                </li>
+
+                <li>
+                    <strong>CRUD</strong>
+                    <p>Data operations</p>
+                </li>
+
+                <li>
+                    <strong>Git & GitHub</strong>
+                    <p>Version control</p>
+                </li>
+
+                <li>
+                    <strong>Backend Development</strong>
+                    <p>Server-side development</p>
+                </li>
+
+                <li>
+                    <strong>Debugging</strong>
+                    <p>Finding & fixing errors</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer></footer>
+
+</body>
 </html>
