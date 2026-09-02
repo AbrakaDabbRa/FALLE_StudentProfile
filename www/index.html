@@ -3,7 +3,13 @@
 <head>
     <title>Portfolio Falle</title>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         header {
             background-color:   hsl(292, 100%, 97%);
             padding: 25px;
@@ -11,6 +17,8 @@
         }
         body {
             background-color: rgb(249, 244, 255);
+            margin: 0;
+            line-height: 1.6;
         }
 
         .navbar ul { 
@@ -18,7 +26,8 @@
             background-color: hsl(0, 0%, 25%); 
             padding: 0px; 
             margin: 0px; 
-            overflow: hidden; 
+            display: flex;
+            flex-wrap: wrap;
         } 
 
         .navbar a { 
@@ -34,12 +43,14 @@
         }
 
         .navbar li {
-            float: left;
+            flex: 1 1 auto;
         }
 
         #name {
             color: black;
             text-align: center;
+            font-size: 2rem;
+            margin: 15px 0 5px 0;
         }
 
         .prof-img {
@@ -47,6 +58,8 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
+            max-width: 60vw;
+            max-height: 60vw;
         }
 
         ul {
@@ -59,6 +72,12 @@
         p {
             font-family: Verdana;
             font-size: 20px;
+        }
+        aside,
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .skills-list {
@@ -92,8 +111,38 @@
             border-radius: 10px;
         }
 
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: hsl(0, 0%, 40%);
+        }
+
         html {
             scroll-behavior: smooth;
+        }
+
+        @media (max-width: 600px) {
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            #name {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            aside,
+            section {
+                padding: 0 12px;
+            }
+
+            .navbar a {
+                padding: 14px 10px;
+            }
         }
     </style>
 </head>
@@ -101,7 +150,7 @@
 <body>
 
     <header>
-        <img src="monke.jpeg" alt="monke img" class="prof-img">
+        <img src="monke.jpeg" alt="Profile photo" class="prof-img">
         <h1 id="name">John Benedict L. Falle</h1>
         <p>Aspiring Web & Database Developer</p>
     </header>
@@ -201,7 +250,7 @@
         </div>
     </section>
 
-    <footer></footer>
+    <footer>&copy; 2026 John Benedict L. Falle</footer>
 
 </body>
 </html>
