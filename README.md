@@ -1,7 +1,7 @@
 # Student Profile — Cordova App
 
 ## Project Description
-A mobile Student Profile app built with Apache Cordova. It shows a profile photo, bio, education, interests, and skills as an installable Android app.
+A mobile Student Profile app built with Apache Cordova. It shows my profile photo, bio, education, interests, and skills as an Android app.
 
 ## Application Structure
 - **Header** — Profile photo, name, and tagline.
@@ -50,17 +50,15 @@ The About and Skills links are anchor links (`#about`, `#skills`) that scroll to
 
 **Desktop**
 
-![Desktop view](<img width="1330" height="970" alt="Screenshot 2026-09-02 194656" src="https://github.com/user-attachments/assets/0ff9f42d-0767-4d21-9fc1-675a55071ec2" />
-)
+![Desktop view]<img width="1330" height="970" alt="Screenshot 2026-09-02 194656" src="https://github.com/user-attachments/assets/abac9317-706c-4f03-b5bb-f16c4773e845" />
 
 **Tablet**
 
-![Tablet view](<img width="1330" height="900" alt="Screenshot 2026-09-02 194801" src="https://github.com/user-attachments/assets/2501c98a-1649-4d12-88b3-30d32927d1be" />
-)
+![Tablet view]<img width="1330" height="900" alt="Screenshot 2026-09-02 194801" src="https://github.com/user-attachments/assets/b396af72-384e-493f-b3a8-8313a35e7603" />
+
 
 **Mobile**
 
-![Mobile view](<img width="1323" height="916" alt="Screenshot 2026-09-02 194823" src="https://github.com/user-attachments/assets/2a758f63-eeb1-4490-98f2-7620abb5ef94" />
-)
+![Mobile view]<img width="1323" height="916" alt="Screenshot 2026-09-02 194823" src="https://github.com/user-attachments/assets/215632e2-6948-49f6-befd-833acadc63ce" />
 
 
