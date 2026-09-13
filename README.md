@@ -1,4 +1,4 @@
-John Benedict L. Falle - Student Profile(multipage
+John Benedict L. Falle - Student Profile(multipage)
 
 Multi-page student profile app built with Cordova. Which shows who I am, my background, my skills, my projects, and how to contact me.
 
@@ -40,22 +40,24 @@ All pages use the same colors, fonts, spacing, and nav bar for consistency. Head
 
 **Profile**
 
-![Profile]<img width="1225" height="1020" alt="image" src="https://github.com/user-attachments/assets/f119232d-b780-44dd-a1ff-66cd6a0a92da" />
+![Profile]<img width="1225" height="847" alt="image" src="https://github.com/user-attachments/assets/9aa45990-5738-4af8-af31-d64b04a758a5" />
+
 
 **About**
 
-![About]<img width="1223" height="912" alt="image" src="https://github.com/user-attachments/assets/aa8ad0b8-3773-451f-80f3-68e2327ce258" />
+![About]<img width="1221" height="850" alt="image" src="https://github.com/user-attachments/assets/d03dc045-e483-4968-b3b5-d678ef875eef" />
 
 **Skills**
 
-![Skills]<img width="1225" height="967" alt="image" src="https://github.com/user-attachments/assets/621c2465-def5-4521-915f-1d39564a36ae" />
+![Skills]<img width="1220" height="910" alt="image" src="https://github.com/user-attachments/assets/42101194-6588-4611-8f2b-9e1e3d6fffc4" />
+
 
 **Projects**
 
-![Project]<img width="1330" height="900" alt="Screenshot 2026-09-02 194801" src="https://github.com/user-attachments/assets/b396af72-384e-493f-b3a8-8313a35e7603" />
+![Project]<img width="1223" height="860" alt="image" src="https://github.com/user-attachments/assets/b84e7171-dbb4-4b71-bc4f-25f72ed9bc61" />
 
 **Contact**
 
-![Contact]<img width="1323" height="916" alt="Screenshot 2026-09-02 194823" src="https://github.com/user-attachments/assets/215632e2-6948-49f6-befd-833acadc63ce" />
+![Contact]<img width="1227" height="835" alt="image" src="https://github.com/user-attachments/assets/bfe13f04-8e2b-4abf-8d78-e5e8752a1e51" />
 
 
