@@ -1,24 +1,33 @@
-John Benedict L. Falle - Student Profile(multipage)
-
-Multi-page student profile app built with Cordova. Which shows who I am, my background, my skills, my projects, and how to contact me.
-
-Pages
-Profile - Homepage. Photo, name, short intro, and links to the other pages.
-About - More about my background, education, and goals.
-Skills - My technical skills with a short description of each.
-Projects - A few projects I've worked on.
-Contact - How to reach me (email, GitHub, LinkedIn).
-Navigation
-
-Every page has the same nav bar with links to all 5 pages, using plain HTML links (no JavaScript as instructed). The current page is highlighted so you know where you are, and every page has a "Back to Profile" button.
-
-Responsive Design
-
-One shared stylesheet (css/style.css) is used by all pages. It uses flexbox for the nav bar and a media query for small screens, so the layout adjusts for Desktop, Tablet, and Mobile without breaking.
-
-UI/UX
-
-All pages use the same colors, fonts, spacing, and nav bar for consistency. Headings are bigger than body text to show what's most important. The active page is marked with underline + bold, not just color, for accessibility.
+# John Benedict L. Falle - Student Profile
+ 
+A multi-page student profile app built with Cordova. It shows who I am, my
+background, my skills, my projects, and how to contact me.
+ 
+## Pages
+ 
+- **Profile** - Homepage. Photo, name, short intro, and links to the other pages.
+- **About** - More about my background, education, and goals.
+- **Skills** - My technical skills with a short description of each.
+- **Projects** - A few projects I've worked on.
+- **Contact** - How to reach me (email, GitHub, LinkedIn).
+## Navigation
+ 
+Every page has the same nav bar with links to all 5 pages, using plain
+HTML links (no JavaScript). The current page is highlighted so you know
+where you are, and every page has a "Back to Profile" button.
+ 
+## Responsive Design
+ 
+One shared stylesheet (`css/style.css`) is used by all pages. It uses
+flexbox for the nav bar and a media query for small screens, so the layout
+adjusts for Desktop, Tablet, and Mobile without breaking.
+ 
+## UI/UX
+ 
+All pages use the same colors, fonts, spacing, and nav bar for consistency.
+Headings are bigger than body text to show what's most important. The
+active page is marked with underline + bold, not just color, for
+accessibility.
 
 ## How to Run
 1. Clone the repo:
