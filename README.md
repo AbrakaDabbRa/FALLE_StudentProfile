@@ -1,34 +1,24 @@
-# Student Profile — Cordova App
+John Benedict L. Falle - Student Profile(multipage
 
-## Project Description
-A mobile Student Profile app built with Apache Cordova. It shows my profile photo, bio, education, interests, and skills as an Android app.
+Multi-page student profile app built with Cordova. Which shows who I am, my background, my skills, my projects, and how to contact me.
 
-## Application Structure
-- **Header** — Profile photo, name, and tagline.
-- **Navigation Menu** — Links to the About and Skills sections.
-- **About Section** — Bio, Education, and Interests.
-- **Skills Section** — Grid of key skills in a bordered box.
-- **Footer** — Bottom of the page.
+Pages
+Profile - Homepage. Photo, name, short intro, and links to the other pages.
+About - More about my background, education, and goals.
+Skills - My technical skills with a short description of each.
+Projects - A few projects I've worked on.
+Contact - How to reach me (email, GitHub, LinkedIn).
+Navigation
 
-## Responsive Design
-Built responsive using **CSS media queries** and a viewport meta tag:
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-```
-- **Tablet (≤768px)** — Photo and text shrink slightly.
-- **Mobile (≤480px)** — Nav links stack vertically, skills grid becomes one column, text and photo shrink further.
+Every page has the same nav bar with links to all 5 pages, using plain HTML links (no JavaScript as instructed). The current page is highlighted so you know where you are, and every page has a "Back to Profile" button.
 
-## UI/UX Principles Applied
-- **Responsive Layout** — Media queries adjust the layout at 768px and 480px.
-- **Mobile-Friendly Spacing** — Padding in content boxes stays readable at every size.
-- **Appropriate Typography** — Verdana font, larger headings for readability.
-- **Clear Visual Hierarchy** — Header → nav → content, with bordered boxes separating sections.
-- **Usable Controls** — Nav links have large tap areas and a hover color change.
-- **Basic Accessibility** — Alt text on the photo, semantic HTML tags, readable contrast.
-- **Consistent Design** — Same box style and color palette used throughout.
+Responsive Design
 
-## Navigation
-The About and Skills links are anchor links (`#about`, `#skills`) that scroll to sections on the same page. **No JavaScript is used** — just HTML and CSS.
+One shared stylesheet (css/style.css) is used by all pages. It uses flexbox for the nav bar and a media query for small screens, so the layout adjusts for Desktop, Tablet, and Mobile without breaking.
+
+UI/UX
+
+All pages use the same colors, fonts, spacing, and nav bar for consistency. Headings are bigger than body text to show what's most important. The active page is marked with underline + bold, not just color, for accessibility.
 
 ## How to Run
 1. Clone the repo:
@@ -48,17 +38,24 @@ The About and Skills links are anchor links (`#about`, `#skills`) that scroll to
 
 ## Screenshots
 
-**Desktop**
+**Profile**
 
-![Desktop view]<img width="1330" height="970" alt="Screenshot 2026-09-02 194656" src="https://github.com/user-attachments/assets/abac9317-706c-4f03-b5bb-f16c4773e845" />
+![Profile]<img width="1225" height="1020" alt="image" src="https://github.com/user-attachments/assets/f119232d-b780-44dd-a1ff-66cd6a0a92da" />
 
-**Tablet**
+**About**
 
-![Tablet view]<img width="1330" height="900" alt="Screenshot 2026-09-02 194801" src="https://github.com/user-attachments/assets/b396af72-384e-493f-b3a8-8313a35e7603" />
+![About]<img width="1223" height="912" alt="image" src="https://github.com/user-attachments/assets/aa8ad0b8-3773-451f-80f3-68e2327ce258" />
 
+**Skills**
 
-**Mobile**
+![Skills]<img width="1225" height="967" alt="image" src="https://github.com/user-attachments/assets/621c2465-def5-4521-915f-1d39564a36ae" />
 
-![Mobile view]<img width="1323" height="916" alt="Screenshot 2026-09-02 194823" src="https://github.com/user-attachments/assets/215632e2-6948-49f6-befd-833acadc63ce" />
+**Projects**
+
+![Project]<img width="1330" height="900" alt="Screenshot 2026-09-02 194801" src="https://github.com/user-attachments/assets/b396af72-384e-493f-b3a8-8313a35e7603" />
+
+**Contact**
+
+![Contact]<img width="1323" height="916" alt="Screenshot 2026-09-02 194823" src="https://github.com/user-attachments/assets/215632e2-6948-49f6-befd-833acadc63ce" />
 
 
