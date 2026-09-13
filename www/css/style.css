@@ -1,0 +1,222 @@
+/* 
+  ===================================================================
+  This file is now SHARED across all 5 pages (index, about, skills,
+  projects, contact). Each page links to it with:
+      <link rel="stylesheet" href="style.css">
+  That's what makes the design "consistent across all pages" (req 8) —
+  change a color here once, and it updates everywhere automatically.
+  ===================================================================
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(249, 244, 255);
+    margin: 0;
+    line-height: 1.6;
+    font-family: Verdana;
+}
+
+header {
+    background-color: hsl(292, 100%, 97%);
+    padding: 25px;
+    text-align: center;
+}
+
+#name {
+    color: black;
+    text-align: center;
+    font-size: 2rem;
+    margin: 15px 0 5px 0;
+}
+
+.prof-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    max-width: 60vw;
+    max-height: 60vw;
+}
+
+/* ------------------- NAVIGATION ------------------- */
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 25%);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+.navbar li {
+    flex: 1 1 auto;
+}
+
+/* 
+  NEW: "active page" indicator.
+  On each page, the nav link pointing to THAT page gets class="active".
+  We show it with an underline + bold, not just a color change, so it 
+  still makes sense to someone who can't distinguish colors well 
+  (accessibility rule: don't rely on color alone).
+*/
+.navbar a.active {
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: hsl(0, 0%, 15%);
+}
+
+/* ------------------- PAGE CONTENT WRAPPER ------------------- */
+/* 
+  NEW: every page's content now sits inside one <main> tag instead of 
+  the old <aside>/<section>. Using ONE consistent wrapper element 
+  across all pages is what makes spacing/width behave identically 
+  everywhere, instead of having to repeat this rule per page.
+*/
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px 40px 20px;
+}
+
+h1, h2, h3 {
+    font-family: Verdana;
+}
+
+h2 {
+    color: black;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* ------------------- REUSABLE BOX STYLES ------------------- */
+.info-box {
+    border: 2px solid rgb(187, 172, 190);
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.skills-box {
+    border: 2px solid hsl(0, 0%, 3%);
+    background-color: hsl(202, 100%, 98%);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.skills-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.skills-list li {
+    padding: 5px;
+}
+
+/* 
+  NEW: reusable project card, used 3 times on projects.html.
+  Same border/box look as .info-box so it feels consistent with the 
+  rest of the site instead of introducing a brand new style.
+*/
+.project-card {
+    border: 2px solid rgb(187, 172, 190);
+    background-color: aliceblue;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+.project-card .tools {
+    font-style: italic;
+    color: hsl(0, 0%, 30%);
+}
+
+/* NEW: simple list style for the contact page links */
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+/* 
+  NEW: a clear "back to homepage" button, used on the 4 non-home pages.
+  Requirement 6 says users must always have an easy way back to the 
+  homepage — this makes that an obvious, tappable element rather than 
+  relying only on the nav bar link blending in with the others.
+*/
+.home-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.home-button:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: hsl(0, 0%, 40%);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------------- MOBILE STYLES ------------------- */
+@media (max-width: 600px) {
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+    #name {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    main {
+        padding: 12px 12px 30px 12px;
+    }
+
+    .navbar a {
+        padding: 14px 10px;
+    }
+}

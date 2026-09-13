@@ -1,254 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Portfolio Falle</title>
-
+    <title>John Benedict L. Falle - Profile</title>
+    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        header {
-            background-color:   hsl(292, 100%, 97%);
-            padding: 25px;
-            text-align: center;
-        }
-        body {
-            background-color: rgb(249, 244, 255);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .navbar ul { 
-            list-style-type: none; 
-            background-color: hsl(0, 0%, 25%); 
-            padding: 0px; 
-            margin: 0px; 
-            display: flex;
-            flex-wrap: wrap;
-        } 
-
-        .navbar a { 
-            color: white; 
-            text-decoration: none; 
-            padding: 15px;
-            display: block;
-            text-align: center;
-        }
-
-        .navbar a:hover {
-            background-color: hsl(0, 0%, 10%);
-        }
-
-        .navbar li {
-            flex: 1 1 auto;
-        }
-
-        #name {
-            color: black;
-            text-align: center;
-            font-size: 2rem;
-            margin: 15px 0 5px 0;
-        }
-
-        .prof-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            max-width: 60vw;
-            max-height: 60vw;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            font-family: Verdana;
-        }
-
-        p {
-            font-family: Verdana;
-            font-size: 20px;
-        }
-        aside,
-        section {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
-        }
-
-        .skills-list li {
-            padding: 5px;
-        }
-
-        .info-box {
-            border: 2px solid rgb(187, 172, 190);
-            background-color: aliceblue;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-
-        h2 {
-            color: hsl(0, 0%, 0%);
-            font-family: Verdana;
-        }
-
-        .skills-box {
-            border: 2px solid hsl(0, 0%, 3%);
-            background-color: hsl(202, 100%, 98%);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-
-        footer {
-            padding: 20px;
-            text-align: center;
-            color: hsl(0, 0%, 40%);
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        @media (max-width: 600px) {
-
-            .skills-list {
-                grid-template-columns: 1fr;
-            }
-
-            #name {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 17px;
-            }
-
-            aside,
-            section {
-                padding: 0 12px;
-            }
-
-            .navbar a {
-                padding: 14px 10px;
-            }
-        }
-    </style>
+    <!-- NEW: linking the shared stylesheet instead of a <style> block -->
 </head>
 
 <body>
 
     <header>
-        <img src="monke.jpeg" alt="Profile photo" class="prof-img">
+        <img src="img/monke.jpeg" alt="Profile photo of John Benedict L. Falle" class="prof-img">
         <h1 id="name">John Benedict L. Falle</h1>
         <p>Aspiring Web & Database Developer</p>
     </header>
 
+    <!-- 
+      NEW: this exact nav block is copied onto all 5 pages.
+      The ONLY difference between copies is which link has class="active" —
+      here it's "Profile" since this is the current page.
+      Links now point to real files (about.html, skills.html, etc.) 
+      instead of "#about" anchors, since these are separate pages now.
+    -->
     <nav class="navbar">
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
+            <li><a href="index.html" class="active">Profile</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
-    <aside id="about">
-        <h2>About Me</h2>
-
+    <main>
+        <h2>Welcome</h2>
         <p>
-            I am an Information Technology student interested in web development
-            and database management. I enjoy building websites and working with
-            SQL to organize and manage data, and I aim to pursue a career as a
-            Web Developer and Database/SQL Developer.
+            Hi, I'm John Benedict L. Falle, an Information Technology student
+            focused on web development and database management.
         </p>
 
         <p>
-            I am continuously improving my programming and development skills
-            through academic projects and personal practice. I am especially
-            interested in creating functional and user-friendly websites while
-            learning more about how frontend and backend systems work together.
+            This site is a short walkthrough of who I am, what I know, and
+            what I've worked on. Use the navigation above to explore my
+            <a href="about.html">background</a>, my
+            <a href="skills.html">technical skills</a>, some of my
+            <a href="projects.html">projects</a>, or how to
+            <a href="contact.html">get in touch</a>.
         </p>
-
-        <div class="info-box">
-            <h3>Education</h3>
-            <p>
-                <strong>Bachelor of Science in Information Technology</strong><br>
-                Xavier University - Ateneo de Cagayan
-            </p>
-
-            <p>
-                <strong>Science, Technology, Engineering, and Mathematics</strong><br>
-                Xavier University - Ateneo de Cagayan
-            </p>
-
-        </div>
-
-        <div class="info-box">
-            <h3>Interests</h3>
-            <p>
-                I want to delve deeper into frontend design, especially in
-                creating clean, responsive, and user-friendly interfaces.
-            </p>
-        </div>
-    </aside>
-
-    <section id="skills">
-        <h2>Skills</h2>
-
-        <div class="skills-box">
-            <ul class="skills-list">
-                <li>
-                    <strong>HTML</strong>
-                    <p>Web page structure</p>
-                </li>
-
-                <li>
-                    <strong>CSS</strong>
-                    <p>Styling & layouts</p>
-                </li>
-
-                <li>
-                    <strong>JavaScript</strong>
-                    <p>Web interactivity</p>
-                </li>
-
-                <li>
-                    <strong>SQL</strong>
-                    <p>Database management</p>
-                </li>
-
-                <li>
-                    <strong>CRUD</strong>
-                    <p>Data operations</p>
-                </li>
-
-                <li>
-                    <strong>Git & GitHub</strong>
-                    <p>Version control</p>
-                </li>
-
-                <li>
-                    <strong>Backend Development</strong>
-                    <p>Server-side development</p>
-                </li>
-
-                <li>
-                    <strong>Debugging</strong>
-                    <p>Finding & fixing errors</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+    </main>
 
     <footer>&copy; 2026 John Benedict L. Falle</footer>
 
