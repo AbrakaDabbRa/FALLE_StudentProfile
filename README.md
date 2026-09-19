@@ -81,19 +81,19 @@ adjusts for Desktop, Tablet, and Mobile without breaking.
    Or open `platforms/android` in Android Studio and click Run ▶.
 
 ### Student Profile
-![Student Profile page]<img width="516" height="827" alt="image" src="https://github.com/user-attachments/assets/d5cce955-7db4-416d-9871-53cd2e6a79d1" />
+<img width="516" height="827" alt="image" src="https://github.com/user-attachments/assets/d5cce955-7db4-416d-9871-53cd2e6a79d1" />
 
  
 ### Edit Profile
-![Edit Profile form]<img width="497" height="807" alt="image" src="https://github.com/user-attachments/assets/f54bc59e-3d2b-4aec-a97c-903091a1f460" />
+<img width="497" height="807" alt="image" src="https://github.com/user-attachments/assets/f54bc59e-3d2b-4aec-a97c-903091a1f460" />
 
  
 ### Updated Profile
-![Updated profile after saving]<img width="496" height="801" alt="image" src="https://github.com/user-attachments/assets/04bd20ae-dbc1-48b7-a4cd-0ecdba034d6b" />
+<img width="496" height="801" alt="image" src="https://github.com/user-attachments/assets/04bd20ae-dbc1-48b7-a4cd-0ecdba034d6b" />
 
  
 ### Contact
-![Contact page]<img width="497" height="802" alt="image" src="https://github.com/user-attachments/assets/7521bcd4-519d-44f5-8810-f5476123c04c" />
+<img width="497" height="802" alt="image" src="https://github.com/user-attachments/assets/7521bcd4-519d-44f5-8810-f5476123c04c" />
 
  
 
