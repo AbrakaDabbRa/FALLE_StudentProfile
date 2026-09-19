@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>John Benedict L. Falle - Profile</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="css/style.css">
+=======
+>>>>>>> origin
 </head>
 
 <body>
@@ -27,11 +30,6 @@
     <main>
         <h2>Welcome</h2>
         <p>
-            Hi, I'm John Benedict L. Falle, an Information Technology student
-            focused on web development and database management.
-        </p>
-
-        <p>
             This site is a short walkthrough of who I am, what I know, and
             what I've worked on. Use the navigation above to explore my
             <a href="about.html">background</a>, my
@@ -39,9 +37,55 @@
             <a href="projects.html">projects</a>, or how to
             <a href="contact.html">get in touch</a>.
         </p>
+
+        <div id="profileCard">
+            <h2>Student Profile</h2>
+            <p><strong>Name:</strong> <span id="displayName"></span></p>
+            <p><strong>Course:</strong> <span id="displayCourse"></span></p>
+            <p><strong>Year Level:</strong> <span id="displayYear"></span></p>
+            <p><strong>About:</strong> <span id="displayAbout"></span></p>
+            <p><strong>Skills:</strong> <span id="displaySkills"></span></p>
+            <button id="editBtn">Edit Profile</button>
+        </div>
+
+        <form id="editForm" class="hidden">
+            <label>
+                Full Name
+                <input type="text" id="inputName" required>
+            </label>
+
+            <label>
+                Course
+                <input type="text" id="inputCourse" required>
+            </label>
+
+            <label>
+                Year Level
+                <input type="text" id="inputYear" required>
+            </label>
+
+            <label>
+                About Me
+                <textarea id="inputAbout" required></textarea>
+            </label>
+
+            <label>
+                Skills (separate with commas)
+                <input type="text" id="inputSkills">
+            </label>
+
+            <p id="formError" class="error hidden"></p>
+
+            <div class="form-buttons">
+                <button type="submit" id="saveBtn">Save</button>
+                <button type="button" id="cancelBtn">Cancel</button>
+            </div>
+        </form>
     </main>
 
     <footer>&copy; 2026 John Benedict L. Falle</footer>
+
+    <script src="js/profile.js"></script>
 
 </body>
 </html>
