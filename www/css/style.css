@@ -1,3 +1,13 @@
+/* 
+  ===================================================================
+  This file is now SHARED across all 5 pages (index, about, skills,
+  projects, contact). Each page links to it with:
+      <link rel="stylesheet" href="style.css">
+  That's what makes the design "consistent across all pages" (req 8) —
+  change a color here once, and it updates everywhere automatically.
+  ===================================================================
+*/
+
 * {
     box-sizing: border-box;
 }
@@ -31,6 +41,7 @@ header {
     max-height: 60vw;
 }
 
+/* ------------------- NAVIGATION ------------------- */
 .navbar ul {
     list-style-type: none;
     background-color: hsl(0, 0%, 25%);
@@ -56,12 +67,26 @@ header {
     flex: 1 1 auto;
 }
 
+/* 
+  NEW: "active page" indicator.
+  On each page, the nav link pointing to THAT page gets class="active".
+  We show it with an underline + bold, not just a color change, so it 
+  still makes sense to someone who can't distinguish colors well 
+  (accessibility rule: don't rely on color alone).
+*/
 .navbar a.active {
     text-decoration: underline;
     font-weight: bold;
     background-color: hsl(0, 0%, 15%);
 }
 
+/* ------------------- PAGE CONTENT WRAPPER ------------------- */
+/* 
+  NEW: every page's content now sits inside one <main> tag instead of 
+  the old <aside>/<section>. Using ONE consistent wrapper element 
+  across all pages is what makes spacing/width behave identically 
+  everywhere, instead of having to repeat this rule per page.
+*/
 main {
     max-width: 800px;
     margin: 0 auto;
@@ -80,6 +105,7 @@ p {
     font-size: 20px;
 }
 
+/* ------------------- REUSABLE BOX STYLES ------------------- */
 .info-box {
     border: 2px solid rgb(187, 172, 190);
     background-color: aliceblue;
@@ -109,6 +135,11 @@ p {
     padding: 5px;
 }
 
+/* 
+  NEW: reusable project card, used 3 times on projects.html.
+  Same border/box look as .info-box so it feels consistent with the 
+  rest of the site instead of introducing a brand new style.
+*/
 .project-card {
     border: 2px solid rgb(187, 172, 190);
     background-color: aliceblue;
@@ -126,6 +157,7 @@ p {
     color: hsl(0, 0%, 30%);
 }
 
+/* NEW: simple list style for the contact page links */
 .contact-list {
     list-style-type: none;
     padding: 0;
@@ -136,6 +168,12 @@ p {
     font-size: 20px;
 }
 
+/* 
+  NEW: a clear "back to homepage" button, used on the 4 non-home pages.
+  Requirement 6 says users must always have an easy way back to the 
+  homepage — this makes that an obvious, tappable element rather than 
+  relying only on the nav bar link blending in with the others.
+*/
 .home-button {
     display: inline-block;
     margin-top: 20px;
@@ -160,6 +198,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ------------------- MOBILE STYLES ------------------- */
 @media (max-width: 600px) {
     .skills-list {
         grid-template-columns: 1fr;
@@ -182,6 +221,13 @@ html {
     }
 }
 
+/* ===================================================================
+   Activity 5: Edit Profile card + form
+   =================================================================== */
+
+/* Generic "hide this element" helper class, toggled on/off by JS
+   instead of writing element.style.display in the JavaScript itself.
+   Keeping show/hide logic in CSS classes is easier to read and reuse. */
 .hidden {
     display: none;
 }
@@ -213,6 +259,7 @@ html {
     background-color: hsl(0, 0%, 10%);
 }
 
+/* The edit form itself */
 #editForm {
     border: 2px solid hsl(0, 0%, 3%);
     background-color: hsl(202, 100%, 98%);
@@ -282,4 +329,23 @@ html {
     color: hsl(0, 70%, 40%);
     font-weight: bold;
     margin: 10px 0;
+}
+
+/* ===================================================================
+   Activity 6: Change Profile Picture button
+   =================================================================== */
+#changePicBtn {
+    display: block;
+    margin: 10px auto 0 auto;
+    padding: 10px 16px;
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#changePicBtn:hover {
+    background-color: hsl(0, 0%, 10%);
 }
