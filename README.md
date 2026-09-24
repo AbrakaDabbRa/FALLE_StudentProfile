@@ -70,9 +70,4 @@ When the app starts, JavaScript checks `localStorage` for both saved text and im
 
 One shared stylesheet (`css/style.css`) is used by all pages. It uses flexbox for the nav bar and media queries for smaller screens so the layout automatically adjusts for Desktop, Tablet, and Mobile displays.
 
-## How to Run
 
-1. Clone the repo:
-   ```bash
-   git clone [https://github.com/AbrakaDabbRa/FALLE_StudentProfile.git](https://github.com/AbrakaDabbRa/FALLE_StudentProfile.git)
-   cd FALLE_StudentProfile
