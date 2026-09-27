@@ -349,3 +349,85 @@ html {
 #changePicBtn:hover {
     background-color: hsl(0, 0%, 10%);
 }
+
+/* ===================================================================
+   Activity 7: Login page + Logout + Delete Test Record
+   =================================================================== */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid hsl(0, 0%, 3%);
+    background-color: hsl(202, 100%, 98%);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.login-form input {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Verdana;
+    border: 1px solid rgb(187, 172, 190);
+    border-radius: 6px;
+}
+
+#loginBtn {
+    width: 100%;
+    padding: 12px;
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+#loginBtn:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+
+#logoutBtn {
+    display: block;
+    margin: 10px auto 0 auto;
+    padding: 8px 16px;
+    background-color: white;
+    color: hsl(0, 0%, 20%);
+    border: 1px solid hsl(0, 0%, 60%);
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#logoutBtn:hover {
+    background-color: hsl(0, 0%, 92%);
+}
+
+.danger-button {
+    display: block;
+    margin-top: 15px;
+    padding: 10px 16px;
+    background-color: white;
+    color: hsl(0, 70%, 40%);
+    border: 1px solid hsl(0, 70%, 60%);
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.danger-button:hover {
+    background-color: hsl(0, 70%, 96%);
+}
+
+.success-message {
+    color: hsl(120, 40%, 30%);
+    font-weight: bold;
+    margin: 10px 0;
+}

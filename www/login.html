@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Student Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 id="name">Student Profile</h1>
+        <p>Please log in to continue</p>
+    </header>
+
+    <main>
+        <form id="loginForm" class="login-form">
+            <label>
+                Student Email
+                <input type="email" id="loginEmail" required>
+            </label>
+
+            <label>
+                Password
+                <input type="password" id="loginPassword" required>
+            </label>
+
+            <p id="loginError" class="error hidden"></p>
+
+            <button type="submit" id="loginBtn">Login</button>
+        </form>
+    </main>
+
+    <footer>&copy; 2026 John Benedict L. Falle</footer>
+
+    <!-- Cordova device features -->
+    <script src="cordova.js"></script>
+
+    <!-- Firebase SDK (compat version — works with plain <script> tags, no bundler needed) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script src="js/firebase-config.js"></script>
+    <script src="js/login.js"></script>
+
+</body>
+</html>

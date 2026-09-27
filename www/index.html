@@ -27,6 +27,9 @@
         -->
         <h1 id="name">John Benedict L. Falle</h1>
         <p>Aspiring Web & Database Developer</p>
+
+        <!-- NEW: signs the user out and sends them back to login.html -->
+        <button id="logoutBtn">Logout</button>
     </header>
 
     <nav class="navbar">
@@ -60,6 +63,12 @@
           ==================================================================
         -->
 
+        <!-- Shows "Unable to retrieve your profile" if loading from the database fails -->
+        <p id="loadError" class="error hidden"></p>
+
+        <!-- Shows "Profile updated successfully" or an update failure message -->
+        <p id="saveMessage" class="hidden"></p>
+
         <div id="profileCard">
             <h2>Student Profile</h2>
             <p><strong>Name:</strong> <span id="displayName"></span></p>
@@ -68,6 +77,15 @@
             <p><strong>About:</strong> <span id="displayAbout"></span></p>
             <p><strong>Skills:</strong> <span id="displaySkills"></span></p>
             <button id="editBtn">Edit Profile</button>
+
+            <!-- 
+              NEW: demonstrates the CRUD "Delete" operation on this test 
+              account's own record, as allowed by the rubric when deleting 
+              a real account isn't appropriate. Deletes the Firestore 
+              document, then a fresh default one is created automatically 
+              (same as a brand new account), so the app keeps working.
+            -->
+            <button id="deleteBtn" class="danger-button">Delete My Record (Test)</button>
         </div>
 
         <form id="editForm" class="hidden">
@@ -113,6 +131,12 @@
       works even though the file isn't sitting in www/ itself.
     -->
     <script src="cordova.js"></script>
+
+    <!-- Firebase SDK — must load BEFORE firebase-config.js and profile.js -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
 
     <!-- 
       NEW: loads the Edit Profile logic. Placed at the end of <body> so 
