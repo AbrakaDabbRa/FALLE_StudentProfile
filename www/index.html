@@ -3,18 +3,33 @@
 <head>
     <title>John Benedict L. Falle - Profile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/style.css">
-=======
->>>>>>> origin
 </head>
 
 <body>
 
     <header>
-        <img src="img/monke.jpeg" alt="Profile photo of John Benedict L. Falle" class="prof-img">
+        <!-- 
+          NEW: id="profileImg" so profile.js can change its "src" after 
+          a photo is captured.
+        -->
+        <img src="img/monke.jpeg" alt="Profile photo of John Benedict L. Falle" class="prof-img" id="profileImg">
+
+        <!-- NEW: opens the camera when tapped -->
+        <button id="changePicBtn">Change Profile Picture</button>
+
+        <!-- Shows camera errors here, e.g. "Unable to access the camera" -->
+        <p id="cameraError" class="error hidden"></p>
+
+        <!-- 
+          NEW: id="name" is now also updated by JavaScript in profile.js 
+          whenever the user saves a new name in the Edit Profile form.
+        -->
         <h1 id="name">John Benedict L. Falle</h1>
         <p>Aspiring Web & Database Developer</p>
+
+        <!-- NEW: signs the user out and sends them back to login.html -->
+        <button id="logoutBtn">Logout</button>
     </header>
 
     <nav class="navbar">
@@ -38,6 +53,22 @@
             <a href="contact.html">get in touch</a>.
         </p>
 
+        <!-- 
+          ==================================================================
+          Activity 5: Student Profile card + Edit Profile form.
+          These two blocks (#profileCard and #editForm) are never both 
+          visible at once — JavaScript in js/profile.js toggles the 
+          "hidden" class on each to swap between "view mode" and 
+          "edit mode" without reloading the page.
+          ==================================================================
+        -->
+
+        <!-- Shows "Unable to retrieve your profile" if loading from the database fails -->
+        <p id="loadError" class="error hidden"></p>
+
+        <!-- Shows "Profile updated successfully" or an update failure message -->
+        <p id="saveMessage" class="hidden"></p>
+
         <div id="profileCard">
             <h2>Student Profile</h2>
             <p><strong>Name:</strong> <span id="displayName"></span></p>
@@ -46,6 +77,15 @@
             <p><strong>About:</strong> <span id="displayAbout"></span></p>
             <p><strong>Skills:</strong> <span id="displaySkills"></span></p>
             <button id="editBtn">Edit Profile</button>
+
+            <!-- 
+              NEW: demonstrates the CRUD "Delete" operation on this test 
+              account's own record, as allowed by the rubric when deleting 
+              a real account isn't appropriate. Deletes the Firestore 
+              document, then a fresh default one is created automatically 
+              (same as a brand new account), so the app keeps working.
+            -->
+            <button id="deleteBtn" class="danger-button">Delete My Record (Test)</button>
         </div>
 
         <form id="editForm" class="hidden">
@@ -85,6 +125,24 @@
 
     <footer>&copy; 2026 John Benedict L. Falle</footer>
 
+    <!-- 
+      NEW: cordova.js gives access to device features like the camera.
+      Cordova auto-generates this file at build time, so this path
+      works even though the file isn't sitting in www/ itself.
+    -->
+    <script src="cordova.js"></script>
+
+    <!-- Firebase SDK — must load BEFORE firebase-config.js and profile.js -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+
+    <!-- 
+      NEW: loads the Edit Profile logic. Placed at the end of <body> so 
+      the HTML elements above already exist in the page before the 
+      script tries to find them with getElementById.
+    -->
     <script src="js/profile.js"></script>
 
 </body>
