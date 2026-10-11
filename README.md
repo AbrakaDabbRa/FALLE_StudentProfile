@@ -1,73 +1,97 @@
 # John Benedict L. Falle - Student Profile
 
-A multi-page student profile app built with Cordova. It shows who I am, my background, my skills, my projects, and how to contact me. It lets me edit and save my profile info directly in the app, as well as take and update my profile picture using the device camera.
+A multi-page Cordova student profile app. It shows who I am, my background,
+my skills, my projects, and how to contact me. Students can edit their
+profile, take a profile picture with the device camera, and sign in through
+a login page that uses Firebase Authentication.
+
+## What Is in This Repository
+
+```
+www/
+  login.html, index.html, about.html, skills.html, projects.html, contact.html
+  css/style.css
+  js/login.js          Login page logic (Firebase Authentication)
+  js/firebase-config.js  Firebase project identifiers and setup
+  js/profile.js        Edit Profile and camera logic
+  img/monke.jpeg       Default profile picture
+config.xml             Cordova configuration
+```
 
 ## Pages
 
-- **Profile** - Homepage. Interactive profile picture, editable profile card (Name, Course, Year Level, About, Skills), and links to the other pages.
-- **About** - More about my background, education, and goals.
-- **Skills** - My technical skills with a short description of each.
-- **Projects** - A few projects I've worked on.
-- **Contact** - How to reach me (email, GitHub, LinkedIn).
+- **Login** - Email/password sign-in.
+- **Profile** - Interactive profile picture, editable profile card (Name,
+  Course, Year Level, About, Skills), and links to the other pages.
+- **About** - Background, education, interests, goals.
+- **Skills** - Technical skills with a short description of each.
+- **Projects** - Projects I've worked on.
+- **Contact** - How to reach me.
 
-## Navigation
+## Authentication
 
-Every page has the same nav bar with links to all 5 pages, using plain HTML links (no JavaScript). The current page is highlighted so you know where you are, and every page has a "Back to Profile" button.
+Login -> Authentication -> Student Profile
+
+`js/login.js` checks that the email and password are filled in, then calls
+Firebase Authentication (`signInWithEmailAndPassword`). Valid credentials go
+to the Profile page. Invalid ones show "Invalid student ID or password."
+The Firebase project it connects to is configured in `js/firebase-config.js`
+and contains my demo account.
 
 ## Profile Editing
 
-The Profile page has an "Edit Profile" button. Clicking it hides the profile card and shows a form pre-filled with the current info. The form lets you change:
-
-- Full Name
-- Course
-- Year Level
-- About Me
-- Skills
-
-**Save** checks the required fields, updates the profile, and shows the new info right away. **Cancel** closes the form without changing anything.
+The Edit Profile form changes Full Name, Course, Year Level, About Me, and
+Skills. **Save** checks that the first four are not empty, then updates the
+profile. **Cancel** closes the form without changing anything. The profile
+text is stored with `localStorage` on the device.
 
 ## Camera Integration
 
-The app uses the `cordova-plugin-camera` plugin to access the device's native camera hardware. 
+Uses `cordova-plugin-camera`. Process:
 
-**Process:**  
-`Change Profile Picture` → `Open Camera` → `Capture Image` → `Update Profile Picture`
+Change Profile Picture -> Open Camera -> Capture Image -> Update Profile Picture
 
-- Tapping the **Change Profile Picture** button or clicking directly on the profile photo triggers the native device camera.
-- Once a photograph is captured, the app receives the image data and updates the profile picture on screen immediately.
+The photo comes back as Base64 data, is shown in the profile image, and is
+saved in `localStorage` so it stays after restarting the app. Cancelling the
+camera keeps the current picture. If the camera cannot be opened, the app
+shows "Unable to access the camera. Please check your device permissions."
 
-## Device Feature Integration
+## Database
 
-Standard web apps running in a browser cannot directly access native mobile device hardware like the camera due to security sandboxing. Cordova acts as a bridge between web code and native device features, allowing JavaScript to call native camera APIs and receive the captured photo back into the app.
-
-## Image Handling
-
-- **Display**: Captured photos are returned as Base64 strings (`DATA_URL`). JavaScript appends the image header and updates the `src` attribute of the profile image element (`#profileImg`).
-- **Persistence**: The Base64 image data is saved in `localStorage` under `studentProfileImage`. When the app opens, JavaScript checks for saved image data and displays it. If no photo has been saved yet, it displays the default profile picture (`img/monke.jpeg`).
-
-## Error Handling & Cancellation
-
-- **Camera Cancellation**: If you open the camera and cancel without taking a picture, the app gracefully returns to the profile screen and keeps your existing profile picture without crashing.
-- **Permission Denial & Camera Errors**: If camera access is denied or the camera cannot be opened, an error message ("Unable to access the camera. Please check your device permissions.") appears on screen under `#cameraError` without breaking the application.
-
-## JavaScript Functionality
-
-`js/profile.js` handles everything on the Profile page:
-
-- **Form handling** - Edit Profile button fills the form with current data; Save and Cancel are handled with event listeners.
-- **Validation** - Checks that Name, Course, Year Level, and About Me are not empty before saving.
-- **Camera handling** - Attaches event listeners to the profile photo and "Change Profile Picture" button, calls `navigator.camera.getPicture()`, updates the profile photo on success, and handles errors or cancellation.
-- **Data & Image updates** - Writes updated profile text and camera images to the page immediately without requiring a browser refresh.
-
-## Local Data Storage
-
-- **Profile Data**: Saved in `localStorage` as a JSON string under `studentProfileData`.
-- **Profile Picture**: Saved in `localStorage` as a Base64 string under `studentProfileImage`.
-
-When the app starts, JavaScript checks `localStorage` for both saved text and image data. If found, it loads them; otherwise, default sample information and the default profile picture are shown.
+The project has a Firebase (Firestore) project connected through
+`js/firebase-config.js`. The planned design was one document per student in a
+`students` collection, named after their Firebase user ID, with the fields
+name, course, year, about, skills, and photo.
 
 ## Responsive Design
 
-One shared stylesheet (`css/style.css`) is used by all pages. It uses flexbox for the nav bar and media queries for smaller screens so the layout automatically adjusts for Desktop, Tablet, and Mobile displays.
+One shared stylesheet (`css/style.css`) uses flexbox and media queries so the
+layout adjusts for Desktop, Tablet, and Mobile.
 
+## Security
 
+- No database passwords, secret keys, or user passwords are in this repository.
+- Passwords are handled by Firebase Authentication, not by my code.
+- `firebase-config.js` holds only public Firebase project identifiers.
+
+## How to Run
+
+1. `git clone https://github.com/AbrakaDabbRa/FALLE_StudentProfile.git`
+2. `cd FALLE_StudentProfile`
+3. `npm install`
+4. `cordova platform add android`
+5. `cordova plugin add cordova-plugin-camera`
+6. `cordova prepare android`
+7. `cordova run android` (use an Android emulator; the camera does not work
+   in `cordova run browser`)
+
+## Known Issues
+
+- The committed `js/profile.js` is the earlier version that stores the
+  profile in `localStorage`, so profile data is not read from or saved to
+  Firestore.
+- `contact.html` has leftover merge-conflict markers around the email line.
+
+## Screenshots
+
+Not included.
