@@ -92,6 +92,3 @@ layout adjusts for Desktop, Tablet, and Mobile.
   Firestore.
 - `contact.html` has leftover merge-conflict markers around the email line.
 
-## Screenshots
-
-Not included.
